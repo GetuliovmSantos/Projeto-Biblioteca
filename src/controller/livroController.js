@@ -35,5 +35,11 @@ module.exports = {
         await Livro.updateLivro(id, titulo, autor, categoria, ano, editora);
 
         return res.redirect('/main');
+    },
+    deleteLivro: async (req, res) => {
+        var id = req.params.id;
+        await Livro.deleteLivro(id);
+        console.log(`Livro com ID: ${id} deletado.`);
+        return res.redirect('/main');
     }
 }

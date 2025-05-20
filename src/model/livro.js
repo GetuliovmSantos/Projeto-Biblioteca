@@ -84,5 +84,19 @@ module.exports = {
                 }
             );
         });
+    },
+    deleteLivro: (id) => {
+        return new Promise((resolve, reject) => {
+            connection.query(`DELETE FROM livros WHERE id_livro = ${id};`,
+                (error, results) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    console.log(results);
+                    resolve(results);
+                }
+            );
+        });
     }
 };

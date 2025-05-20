@@ -9,6 +9,7 @@ router.get('/', homeController.home)
 router.get('/main', loginController.main)
 router.get('/livro/form/create', livroController.formCreateLivro)
 router.get('/livro/form/update/:id', livroController.formUpdateLivro)
+router.get('/livro/delete/:id', livroController.deleteLivro)
 
 router.post('/login', loginController.authentication)
 router.post('/livro/createLivro', livroController.createLivro)
