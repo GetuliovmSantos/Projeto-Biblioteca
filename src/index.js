@@ -1,9 +1,9 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser');
-const router = require('./src/router/routes');
+const router = require('./router/routes');
 const session = require('express-session');
-const db = require('./src/database/connection')
+const db = require('./database/connection')
 
 const app = express();
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Biblioteca</title>
+</head>
+<body>
+    <div class="container mx-auto mt-20 border p-8 my-10 w-full max-w-md bg-white shadow-lg">
+        <h1 class="text-3xl flex justify-center items-center font-bold mb-8">Biblioteca Municipal</h1>
+        <div class="flex justify-center" id="form">
+            <form action="/login" method="post" class="w-full">
+                <input class="text-center border p-2 my-2 w-full rounded" type="email" name="email" placeholder="E-Mail" required>
+                <input class="text-center border p-2 my-2 w-full rounded" type="password" name="senha" placeholder="Senha" required>
+                <div class="flex justify-center items-center mt-4">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" type="submit">ENTRAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
