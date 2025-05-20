@@ -5,6 +5,7 @@ const homeController = require('../controller/homeController')
 const loginController = require("../controller/loginController")
 
 router.get('/', homeController.home)
+router.get('/main', loginController.main)
 
 router.post('/login', loginController.authentication)
 

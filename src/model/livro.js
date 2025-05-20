@@ -27,7 +27,20 @@ module.exports = {
                 }
 
             );
-        })
+        });
     },
-
-}
+    getLivros: () => {
+        return new Promise((resolve, reject) => {
+            connection.query('SELECT * FROM livros',
+                (error, results) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    console.log(results);
+                    resolve(results);
+                }
+            );
+        });
+    }
+};

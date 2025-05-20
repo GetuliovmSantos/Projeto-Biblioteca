@@ -15,14 +15,27 @@ module.exports = {
             console.log(user);
 
             if(user){
-                res.redirect('/main')
+                res.redirect('/main');
             }else {
-                res.send("Email or Password incorrect!")
+                res.send("Email or Password incorrect!");
             }
         }catch(error){
-            console.log("Error: ", error)
-            res.status(500).send("Error")
+            console.log("Error: ", error);
+            res.status(500).send("Error");
         }
     },
+    main: async (_, res) => {
+        if(!session.id_user){
+            return res.redirect('/');
+        }
 
+        const livros = await Livro.getLivros();
+        res.render(
+            'livro/main',
+            {
+                nome: session.name,
+                livros: livros
+            }
+        )
+    }
 };
