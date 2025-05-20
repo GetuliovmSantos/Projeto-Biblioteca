@@ -8,8 +8,10 @@ const livroController = require('../controller/livroController')
 router.get('/', homeController.home)
 router.get('/main', loginController.main)
 router.get('/livro/form/create', livroController.formCreateLivro)
+router.get('/livro/form/update/:id', livroController.formUpdateLivro)
 
 router.post('/login', loginController.authentication)
 router.post('/livro/createLivro', livroController.createLivro)
+router.post('/livro/updateLivro/:id', livroController.updateLivro)
 
 module.exports = router

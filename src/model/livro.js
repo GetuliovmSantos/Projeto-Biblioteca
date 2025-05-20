@@ -56,5 +56,33 @@ module.exports = {
                 }
             );
         });
+    },
+    getLivro: (id) => {
+        return new Promise((resolve, reject) => {
+            connection.query(`SELECT * FROM livros WHERE id_livro = ${id};`,
+                (error, results) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    console.log(results);
+                    resolve(results[0]);
+                }
+            );
+        });
+    },
+    updateLivro: (id, titulo, autor, categoria, ano, editora) => {
+        return new Promise((resolve, reject) => {
+            connection.query(`UPDATE livros SET titulo = "${titulo}", autor = "${autor}", categoria = "${categoria}", ano_publicacao = ${ano}, editora = "${editora}" WHERE id_livro = ${id};`,
+                (error, results) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    console.log(results);
+                    resolve(results);
+                }
+            );
+        });
     }
 };
