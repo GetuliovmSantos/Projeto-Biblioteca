@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Lista de Livros</title>
@@ -7,6 +8,7 @@
     <!-- Tailwind CSS CDN (opcional, remova se não usar) -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center mb-6">
@@ -14,7 +16,7 @@
             <a href="/logout" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">Logout</a>
         </div>
         <div class="mb-4 flex justify-end">
-            <a href="/livro/form/adicionar" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Adicionar Livro</a>
+            <a href="/livro/form/create" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Adicionar Livro</a>
         </div>
         <div class="overflow-x-auto bg-white rounded shadow">
             <table class="min-w-full text-center">
@@ -30,25 +32,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% livros.forEach(livro => { %>
+                    <% livros.forEach(livro=> { %>
                         <tr class="hover:bg-gray-50">
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.id_livro %></td>
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.titulo %></td>
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.autor %></td>
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.categoria %></td>
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.ano_publicacao %></td>
-                            <td class="py-2 px-4 border-b align-middle"><%= livro.editora %></td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.id_livro %>
+                            </td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.titulo %>
+                            </td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.autor %>
+                            </td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.categoria %>
+                            </td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.ano_publicacao %>
+                            </td>
+                            <td class="py-2 px-4 border-b align-middle">
+                                <%= livro.editora %>
+                            </td>
                             <td class="py-2 px-4 border-b align-middle">
                                 <div class="flex justify-center space-x-2">
-                                    <a href="/livro/form/alterar/<%= livro.id_livro %>" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-sm">Editar</a>
-                                    <a href="/livro/deletar/<%= livro.id_livro %>" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Excluir</a>
+                                    <a href="/livro/form/alterar/<%= livro.id_livro %>"
+                                        class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-sm">Editar</a>
+                                    <a href="/livro/deletar/<%= livro.id_livro %>"
+                                        class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Excluir</a>
                                 </div>
                             </td>
                         </tr>
-                    <% }) %>
+                        <% }) %>
                 </tbody>
             </table>
         </div>
     </div>
 </body>
+
 </html>

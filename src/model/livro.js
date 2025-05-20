@@ -42,5 +42,19 @@ module.exports = {
                 }
             );
         });
+    },
+    createLivro: (titulo, autor, categoria, ano, editora) => {
+        return new Promise((resolve, reject) => {
+            connection.query(`INSERT INTO livros (titulo, autor, categoria, ano_publicacao, editora) VALUES ("${titulo}", "${autor}", "${categoria}", ${ano}, "${editora}");`,
+                (error, results) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    console.log(results);
+                    resolve(results);
+                }
+            );
+        });
     }
 };

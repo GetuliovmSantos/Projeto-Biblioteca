@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Livro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto max-w-md bg-white rounded-lg shadow p-8 my-12">
+        <h1 class="text-2xl font-bold text-center mb-6">Biblioteca - Cadastrar Livro</h1>
+        <form action="/livro/createLivro" method="post" class="space-y-4">
+            <input class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="titulo" placeholder="Título do Livro" required>
+            <input class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="autor" placeholder="Autor" required>
+            <input class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="categoria" placeholder="Categoria" required>
+            <input class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="number" name="ano" placeholder="Ano de Publicação" min="0" required>
+            <input class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" name="editora" placeholder="Editora" required>
+            <div class="flex justify-center">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
