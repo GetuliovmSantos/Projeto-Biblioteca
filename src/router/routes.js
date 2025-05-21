@@ -1,18 +1,23 @@
-const {Router} = require("express")
-const router = Router()
+// Importação do Router do Express
+const Router = require("express");
+const router = Router();
 
-const homeController = require('../controller/homeController')
-const loginController = require("../controller/loginController")
-const livroController = require('../controller/livroController')
+// Importação dos controllers
+const homeController = require('../controller/homeController');
+const loginController = require("../controller/loginController");
+const livroController = require('../controller/livroController');
 
-router.get('/', homeController.home)
-router.get('/main', loginController.main)
-router.get('/livro/form/create', livroController.formCreateLivro)
-router.get('/livro/form/update/:id', livroController.formUpdateLivro)
-router.get('/livro/delete/:id', livroController.deleteLivro)
+// Rotas GET
+router.get('/', homeController.home); // Página inicial
+router.get('/main', loginController.main); // Página principal após login
+router.get('/livro/form/create', livroController.formCreateLivro); // Formulário para criar livro
+router.get('/livro/form/update/:id', livroController.formUpdateLivro); // Formulário para atualizar livro
+router.get('/livro/delete/:id', livroController.deleteLivro); // Deletar livro
 
-router.post('/login', loginController.authentication)
-router.post('/livro/createLivro', livroController.createLivro)
-router.post('/livro/updateLivro/:id', livroController.updateLivro)
+// Rotas POST
+router.post('/login', loginController.authentication); // Autenticação de login
+router.post('/livro/createLivro', livroController.createLivro); // Criar livro
+router.post('/livro/updateLivro/:id', livroController.updateLivro); // Atualizar livro
 
-module.exports = router
+// Exportação do router
+module.exports = router;
